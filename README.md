@@ -18,5 +18,7 @@ Well, **no more**. I give you `SELECT [dbo].[stringEXEC]('DROP TABLE [dbo].[AnyT
 
 **To run this from within actual function, use this approach:**
 ```
-DECLARE @result NVARCHAR(4000) = (SELECT [dbo].[stringEXEC]('CREATE TABLE [dbo].[anyTable] ([result] nvarchar(max))'))
+DECLARE @res NVARCHAR(4) = (SELECT [dbo].[stringEXEC]('CREATE TABLE [dbo].[anyTable] ([result] nvarchar(max))'))
 ```
+
+**Note:** This is a terrible idea. Please try to find another way for use in production environments. You have been warned.
