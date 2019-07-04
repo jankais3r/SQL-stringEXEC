@@ -16,8 +16,7 @@ Well, **no more**. I give you `SELECT [dbo].[stringEXEC]('DROP TABLE [dbo].[AnyT
 
 ![execute any sql from within your other functions](./exec.png)
 
-To run this from within actual function, use this approach:
+**To run this from within actual function, use this approach:**
 ```
-DECLARE @sql NVARCHAR(4000) = 'CREATE TABLE [dbo].[anyTable] ([result] nvarchar(max))'
-DECLARE @result NVARCHAR(4000) = (SELECT [dbo].[stringEXEC](@sql))
+DECLARE @result NVARCHAR(4000) = (SELECT [dbo].[stringEXEC]('CREATE TABLE [dbo].[anyTable] ([result] nvarchar(max))'))
 ```
